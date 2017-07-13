@@ -11,7 +11,7 @@ class OrdersController < ApplicationController
       current_cart.cart_items.each do |ci|
         product_list = ProductList.new
         product_list.order = @order
-        product_list.product_name = ci.product.timeoutable
+        product_list.product_name = ci.product.title
         product_list.product_price = ci.product.price
         product_list.quantity = ci.quantity
         product_list.save
